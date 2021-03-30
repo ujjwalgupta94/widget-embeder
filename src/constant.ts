@@ -5,5 +5,6 @@ export const defaultConfig = {
      height:'500px',
      newTabForMobile:false,
      title:"Matic Widget",
-     width:'500px'
+     width:'400px',
+     position:''
 } as IConfig

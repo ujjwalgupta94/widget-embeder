@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".matic-widget {\n  border: 1px solid; }\n", "",{"version":3,"sources":["webpack://./src/styles/index.scss"],"names":[],"mappings":"AAAA;EACI,iBAAiB,EAAA","sourcesContent":[".matic-widget{\n    border: 1px solid;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".matic-widget {\n  border: 1px solid;\n  position: fixed; }\n  .matic-widget iframe {\n    width: 100%;\n    height: 100%; }\n  .matic-widget.center {\n    left: 0;\n    right: 0;\n    margin-left: auto;\n    margin-right: auto;\n    top: 0;\n    bottom: 0;\n    margin-top: auto;\n    margin-bottom: auto; }\n  .matic-widget.bottom-right {\n    bottom: 0px;\n    right: 0px; }\n  .matic-widget.bottom-left {\n    bottom: 0px;\n    left: 0px; }\n", "",{"version":3,"sources":["webpack://./src/styles/index.scss"],"names":[],"mappings":"AAAA;EACI,iBAAiB;EACjB,eAAe,EAAA;EAFnB;IAMO,WAAW;IACX,YAAY,EAAA;EAPnB;IAWM,OAAO;IACP,QAAQ;IACR,iBAAiB;IACjB,kBAAkB;IAElB,MAAM;IACN,SAAS;IACT,gBAAgB;IAChB,mBAAmB,EAAA;EAnBzB;IAuBO,WAAW;IACX,UAAU,EAAA;EAxBjB;IA4BO,WAAW;IACX,SAAS,EAAA","sourcesContent":[".matic-widget{\n    border: 1px solid;\n    position: fixed;\n\n   \n    iframe{\n       width: 100%;\n       height: 100%;\n    }\n\n    &.center{\n      left: 0;\n      right: 0;\n      margin-left: auto;\n      margin-right: auto; \n      \n      top: 0;\n      bottom: 0;\n      margin-top: auto;\n      margin-bottom: auto;\n    }\n\n    &.bottom-right{\n       bottom: 0px;\n       right: 0px;   \n    }\n\n    &.bottom-left{\n       bottom: 0px;\n       left: 0px;   \n    }\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -467,7 +467,8 @@ var defaultConfig = {
     height: '500px',
     newTabForMobile: false,
     title: "Matic Widget",
-    width: '500px'
+    width: '400px',
+    position: ''
 };
 
 
@@ -604,7 +605,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 var Widget = /** @class */ (function () {
     function Widget(config) {
-        this._config = __assign(__assign({}, config), _constant__WEBPACK_IMPORTED_MODULE_0__.defaultConfig);
+        this._config = __assign(__assign({}, _constant__WEBPACK_IMPORTED_MODULE_0__.defaultConfig), config);
     }
     Widget.prototype.create = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -612,7 +613,8 @@ var Widget = /** @class */ (function () {
             return __generator(this, function (_a) {
                 config = this._config;
                 el = document.createElement('div');
-                el.className = "matic-widget";
+                el.style.cssText = "height:" + config.height + ";width:" + config.width + ";";
+                el.className = "matic-widget " + config.position;
                 iframe = document.createElement('iframe');
                 iframe.src = "https://wallet-v1.matic.today/widgets/v1/deposit/?embed=true&wappId=" + config.appId;
                 el.appendChild(iframe);

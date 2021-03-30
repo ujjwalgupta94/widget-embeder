@@ -27,7 +27,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.ts'] // '' is needed to find modules like "jquery"
+        extensions: ['.ts']
     },
     plugins: [
         // new SmartBannerPlugin(banner),

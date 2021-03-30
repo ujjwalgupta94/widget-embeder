@@ -7,13 +7,24 @@ module.exports = {
     name: "jsstore",
     entry: "./src/index.ts",
     module: {
-        rules: [{
-            test: /\.ts$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'ts-loader'
+        rules: [
+            {
+                test: /\.ts$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'ts-loader'
+                }
+            },
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                use: [
+                    'style-loader',
+                    'css-loader',{
+                    loader: 'sass-loader'
+                }]
             }
-        }]
+        ]
     },
     resolve: {
         extensions: ['.ts'] // '' is needed to find modules like "jquery"

@@ -17,6 +17,7 @@ function createConfigsForAllLibraryTarget() {
                 path: path.join(__dirname, "./../build"),
                 filename: target.name,
                 library: 'MaticWidget',
+                libraryExport: 'default',
                 libraryTarget: target.type
             },
             plugins: [

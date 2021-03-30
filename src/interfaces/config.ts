@@ -4,4 +4,5 @@ export interface IConfig {
     width: string;
     height: string;
     autoOpenTime: number;
+    appId:string;
 }
